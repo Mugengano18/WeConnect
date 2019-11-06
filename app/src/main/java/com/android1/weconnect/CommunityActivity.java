@@ -3,12 +3,17 @@ package com.android1.weconnect;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.android1.weconnect.Adapters.MessageAdapter;
 import com.android1.weconnect.Models.AllMethods;
@@ -60,8 +65,17 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        if(TextUtils.isEmpty(etMessage.getText().toString())){
+            Message message = new Message(etMessage.getText().toString(),u.getName());
+            etMessage.setText("");
+            messagedb.push().setValue(message);
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"you cannot send blank message",Toast.LENGTH_SHORT).show();
+        }
 
     }
+
 
     @Override
     protected void onStart() {
@@ -89,17 +103,45 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
         messagedb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
+                Message message = dataSnapshot.getValue(Message.class);
+                message.setKey(dataSnapshot.getKey());
+                messages.add(message);
+                displayMessages(messages);
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Message message = dataSnapshot.getValue(Message.class);
+                message.setKey(dataSnapshot.getKey());
 
+                List<Message> newMessages = new ArrayList<Message>();
+                for (Message m: messages){
+                    if (m.getKey().equals(message.getKey())){
+                        newMessages.add(message);
+                    }
+                    else {
+                        newMessages.add(m);
+
+                    }
+                }
+                messages = newMessages;
+
+                displayMessages(messages);
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                Message message = dataSnapshot.getValue(Message.class);
+                message.setKey(dataSnapshot.getKey());
+                List<Message> newMessages = new ArrayList<Message>();
 
+                for (Message m : messages){
+                    if (!m.getKey().equals(message.getKey())){
+                        newMessages.add(m);
+                    }
+                }
+                messages = newMessages;
+                displayMessages(messages);
             }
 
             @Override
@@ -111,7 +153,19 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        })
+        });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        messages = new ArrayList<>();
+    }
+
+    private void displayMessages(List<Message> messages){
+        rvMessage.setLayoutManager(new LinearLayoutManager(CommunityActivity.this));
+        messageAdapter = new MessageAdapter(CommunityActivity.this,messages,messagedb);
+        rvMessage.setAdapter(messageAdapter);
     }
 }
