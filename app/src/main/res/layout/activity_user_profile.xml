@@ -27,7 +27,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
                 android:scaleType="centerInside"
-                android:src="@drawable/emoji"/>
+                android:src="@drawable/img1"/>
 
             </RelativeLayout>
         <TextView
