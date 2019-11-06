@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WeConnect</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="title">Fighter</string>
     <string name="conditions">I accept,the terms and conditions</string>
     <string name="login">Login Here!!</string>
@@ -14,5 +16,6 @@
         <item>Singapore</item>
         <item>New Zealand</item>
         <item>India</item>
+        <item>Rwanda</item>
     </string-array>
 </resources>
