@@ -16,12 +16,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android1.weconnect.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,21 +32,18 @@ import butterknife.ButterKnife;
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG=SignUp.class.getSimpleName();
 
-    @BindView(R.id.iUserName)
-    EditText usernameOrg;
-    @BindView(R.id.iPassword)EditText passwordOrg;
-    @BindView(R.id.iPassword1)EditText comfirmPasswordOrg;
-    @BindView(R.id.iEmail)EditText emailOrg;
-    @BindView(R.id.signupButton)
-    Button signUpOrg;
-    @BindView(R.id.swapL)
-    TextView loginOrg;
-    @BindView(R.id.check)
-    CheckBox verify;
+    @BindView(R.id.iUserName) EditText usernameOrg;
+    @BindView(R.id.iPassword) EditText passwordOrg;
+    @BindView(R.id.iPassword1) EditText comfirmPasswordOrg;
+    @BindView(R.id.iEmail) EditText emailOrg;
+    @BindView(R.id.signupButton) Button signUpOrg;
+    @BindView(R.id.swapL) TextView loginOrg;
+    @BindView(R.id.check) CheckBox verify;
 
     private FirebaseAuth authorized;
     private FirebaseAuth.AuthStateListener authorizedThListener;
     private ProgressDialog authorizedProgressDialog;
+    DatabaseReference reference;
 
     private String fUserName;
     @Override
@@ -53,7 +53,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         ButterKnife.bind(this);
 
         authorized=FirebaseAuth.getInstance();
-        createAuthStateListener();
+//        eliane
+        reference = FirebaseDatabase.getInstance().getReference().child("Users");
+//        eliane
+//        createAuthStateListener();
         createAuthProgressDialog();
 
 
@@ -105,54 +108,62 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         authorizedProgressDialog.show();
 
-        authorized.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        authorized.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         authorizedProgressDialog.dismiss();
 
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
+//                            eliane
+                            FirebaseUser firebaseUser = authorized.getCurrentUser();
+                            User u = new User();
+                            u.setName(username);
+                            reference.child(firebaseUser.getUid()).setValue(u)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                Toast.makeText(getApplicationContext(),"Created new account successfully",Toast.LENGTH_SHORT).show();
+                                                finish();
+                                                Intent i = new Intent(SignUp.this,CommunityActivity.class);
+                                                startActivity(i);
+                                            }
+                                            else {
+                                                Toast.makeText(getApplicationContext(),"could not create new account",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
 
-                            createFirebaseUserProfile(task.getResult().getUser());
 
-                        } else {
-                            Toast.makeText(SignUp.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+//                            eliane
+//                            createFirebaseUserProfile(task.getResult().getUser());
+
                         }
+//                        else {
+//                            Toast.makeText(SignUp.this, "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                        }
 
                     }
                 });
-
-        authorized.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, "Authentication successful");
-                        } else {
-                            Toast.makeText(SignUp.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
     }
-    private void createAuthStateListener() {
-        authorizedThListener = new FirebaseAuth.AuthStateListener() {
-
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                final FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Intent intent = new Intent(SignUp.this, LoginActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-
-        };
-    }
+//    private void createAuthStateListener() {
+//        authorizedThListener = new FirebaseAuth.AuthStateListener() {
+//
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                final FirebaseUser user = firebaseAuth.getCurrentUser();
+//                if (user != null) {
+//                    Intent intent = new Intent(SignUp.this, LoginActivity.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            }
+//
+//        };
+//    }
 
     private boolean isValidEmail(String email) {
         boolean isGoodEmail =
@@ -183,24 +194,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         return true;
     }
 
-    private void createFirebaseUserProfile(final FirebaseUser user) {
-
-        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
-                .setDisplayName(fUserName).build();
-
-        user.updateProfile(addProfileName)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(SignUp.this, "The displayed username has been set", Toast.LENGTH_LONG).show();
-
-                        }
-                    }
-
-                });
-    }
+//    private void createFirebaseUserProfile(final FirebaseUser user) {
+//
+//        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder().setDisplayName(fUserName).build();
+//
+//        user.updateProfile(addProfileName).addOnCompleteListener(new OnCompleteListener<Void>() {
+//
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(SignUp.this, "The displayed username has been set", Toast.LENGTH_LONG).show();
+//
+//                        }
+//                    }
+//
+//                });
+//    }
     @Override
     public void onStart() {
         super.onStart();
