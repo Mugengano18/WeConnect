@@ -1,20 +1,13 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <color name="colorPrimary">#F7DF8B</color>
-        <color name="colorPrimaryDark">#E0EE5D</color>
-        <color name="colorAccent">#D6BF04</color>
-        <color name="address">#F8F0A6</color>
-        <color name="followers">#AAA062</color>
-        <color name="headings">#E6D149</color>
-        <color name="solidCircle">#F1E685</color>
-        <color name="circle">#61CCBD</color>
-        <color name="gradEnd">#A7E460</color>
-        <color name="gradStart">#65CA69</color>
-        <color name="followersBg">#008577</color>
-        <color name="followingBg">#61F0DC</color>
-        <color name="grey">#A1DA5E</color>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
     </style>
 
 </resources>
