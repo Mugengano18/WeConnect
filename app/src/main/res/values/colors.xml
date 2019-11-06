@@ -13,4 +13,5 @@
     <color name="followersBg">#008577</color>
     <color name="followingBg">#61F0DC</color>
     <color name="grey">#A1DA5E</color>
+    <color name="circleBorder">#565A28</color>
 </resources>
