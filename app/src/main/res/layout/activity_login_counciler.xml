@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginCounselorActivity"
+    android:background="@color/colorLigthCoral">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        android:textColor="@color/colorGreen"/>
+
+    <EditText
+        android:id="@+id/counUserNameL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="UserName"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="91dp"
+        android:textColorHint="@color/colorTextIcons"
+        android:textColor="@color/colorPrimaryText"/>
+
+    <EditText
+        android:id="@+id/counEmailL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/counUserNameL"
+        android:layout_marginLeft="91dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorTextIcons" />
+
+
+    <EditText
+        android:id="@+id/counPasswordL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/counEmailL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="91dp"
+        android:layout_marginTop="-3dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorTextIcons" />
+
+    <Button
+        android:id="@+id/counLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/counforget"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="LOGIN" />
+
+    <TextView
+        android:id="@+id/counforget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/counPasswordL"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="23dp"
+        android:padding="10dp"
+        android:text="Forgot password? "
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/counSwap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginCounButton"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
+        android:text="@string/create"
+        android:textColor="@color/colorTextIcons" />
+
+</RelativeLayout>
