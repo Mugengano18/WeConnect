@@ -10,14 +10,14 @@
         android:layout_height="wrap_content"
         android:background="@drawable/grad"
         android:id="@+id/rellay"
-        android:paddingBottom="20dp">
+        android:paddingBottom="40dp">
 
         <RelativeLayout
             android:id="@+id/UserProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/circle_border">
             <ImageView
                 android:layout_width="120dp"
@@ -27,9 +27,9 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
                 android:scaleType="centerInside"
-                android:src="@drawable/img1"/>
+                android:src="@drawable/konect"/>
 
-            </RelativeLayout>
+        </RelativeLayout>
         <TextView
             android:id="@+id/UserName"
             android:layout_width="wrap_content"
@@ -55,44 +55,44 @@
             android:fontFamily="sans-serif-light"
             android:textColor="@color/address"/>
 
-        </RelativeLayout>
-    <LinearLayout
-        android:id="@+id/follo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/followers"
-        android:layout_below="@+id/rellay">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="400k"
-                    android:textSize="25sp"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@android:color/white"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="followers"
-                    android:textSize="13sp"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@android:color/white"/>
-            </LinearLayout>
-        </RelativeLayout>
+    </RelativeLayout>
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/follo"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/followers"-->
+    <!--        android:layout_below="@+id/rellay">-->
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center">-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:gravity="center_horizontal">-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="400k"-->
+    <!--                    android:textSize="25sp"-->
+    <!--                    android:fontFamily="sans-serif-light"-->
+    <!--                    android:textColor="@android:color/white"/>-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="followers"-->
+    <!--                    android:textSize="13sp"-->
+    <!--                    android:fontFamily="sans-serif-light"-->
+    <!--                    android:textColor="@android:color/white"/>-->
+    <!--            </LinearLayout>-->
+    <!--        </RelativeLayout>-->
 
-</LinearLayout>
+    <!--</LinearLayout>-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/follo">
+        android:layout_below="@+id/rellay">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,104 +106,179 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@color/headings"
-                    android:textSize="13sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="user@weconect.com"
-                    android:textColor="#000000"
-                    android:textSize="18sp"/>
-
-                <View
+                android:orientation="horizontal">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/grey"/>
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_email_green_24dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="@color/headings"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:id="@+id/EmailTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="user@weconect.com"
+                            android:textColor="#000000"
+                            android:textSize="18sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/grey"/>
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@color/headings"
-                    android:textSize="13sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="user@weconect.com"
-                    android:textColor="#000000"
-                    android:textSize="18sp"/>
-
-                <View
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/grey"/>
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_call_green_24dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone"
+                            android:textColor="@color/headings"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:id="@+id/PhoneTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="+(250)78768554"
+                            android:textColor="#000000"
+                            android:textSize="18sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/grey"/>
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@color/headings"
-                    android:textSize="13sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="user@weconect.com"
-                    android:textColor="#000000"
-                    android:textSize="18sp"/>
-
-                <View
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/grey"/>
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/twitter"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Twitter"
+                            android:textColor="@color/headings"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:id="@+id/twitter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="user@1"
+                            android:textColor="#000000"
+                            android:textSize="18sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/grey"/>
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@color/headings"
-                    android:textSize="13sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="user@weconect.com"
-                    android:textColor="#000000"
-                    android:textSize="18sp"/>
-
-                <View
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/grey"/>
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/fb"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Facebook"
+                            android:textColor="@color/headings"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:id="@+id/facebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="user1"
+                            android:textColor="#000000"
+                            android:textSize="18sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/grey"/>
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
 
     </RelativeLayout>
