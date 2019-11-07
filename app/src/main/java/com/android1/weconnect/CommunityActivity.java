@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -35,10 +33,10 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
 
     FirebaseAuth auth;
     FirebaseDatabase database;
+    DatabaseReference messageDb;
     MessageAdapter messageAdapter;
     User u;
     List<Message> messages;
-    DatabaseReference messagedb;
     RecyclerView rvMessage;
     EditText etMessage;
     ImageButton imgButton;
@@ -66,10 +64,10 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v==imgButton){
-            if(TextUtils.isEmpty(etMessage.getText().toString())){
+            if(!TextUtils.isEmpty(etMessage.getText().toString())){
                 Message message = new Message(etMessage.getText().toString(),u.getName());
                 etMessage.setText("");
-                messagedb.push().setValue(message);
+                messageDb.push().setValue(message);
             }
             else {
                 Toast.makeText(getApplicationContext(),"you cannot send blank message",Toast.LENGTH_SHORT).show();
@@ -100,8 +98,8 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
-        messagedb = database.getReference("messages");
-        messagedb.addChildEventListener(new ChildEventListener() {
+        messageDb = database.getReference("messages");
+        messageDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Message message = dataSnapshot.getValue(Message.class);
@@ -166,7 +164,7 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
 
     private void displayMessages(List<Message> messages){
         rvMessage.setLayoutManager(new LinearLayoutManager(CommunityActivity.this));
-        messageAdapter = new MessageAdapter(CommunityActivity.this,messages,messagedb);
+        messageAdapter = new MessageAdapter(CommunityActivity.this,messages, messageDb);
         rvMessage.setAdapter(messageAdapter);
     }
 }
