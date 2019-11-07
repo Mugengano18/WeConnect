@@ -60,6 +60,7 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
+
                 }
             }
         };
@@ -69,6 +70,8 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
         counresetPassword.setOnClickListener(this);
 
     }
+
+
 
 
     @Override

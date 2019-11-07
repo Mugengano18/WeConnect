@@ -30,8 +30,8 @@ public class RegisterCounselorActivity extends AppCompatActivity implements View
 
     @BindView(R.id.counEmail) EditText emailCon;
     @BindView(R.id.iRegistered)EditText regNumber;
-    @BindView(R.id.iUserNameC)EditText usernameCon;
-    @BindView(R.id.iPasswordC)EditText passwordCon;
+    @BindView(R.id.counUsername)EditText usernameCon;
+    @BindView(R.id.counPasswordI)EditText passwordCon;
     @BindView(R.id.iPassword1C)EditText comfirmPasswordCon;
     @BindView(R.id.signupButtonC)EditText submission;
     @BindView(R.id.checkC) CheckBox verifyCon;

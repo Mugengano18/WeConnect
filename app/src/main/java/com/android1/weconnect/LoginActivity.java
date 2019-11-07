@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,16 +29,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static final String TAG = LoginActivity.class.getSimpleName();
 
     @BindView(R.id.iUserNameL) EditText usernameOl;
-    @BindView(R.id.iPasswordL)
-    EditText passwordOl;
-    @BindView(R.id.iEmailL)
-    EditText emailOl;
-    @BindView(R.id.loginButton)
-    Button login;
-    @BindView(R.id.swap)
-    TextView signUp;
-    @BindView(R.id.forget)
-    TextView resetPassword;
+    @BindView(R.id.iPasswordL) EditText passwordOl;
+    @BindView(R.id.iEmailL) EditText emailOl;
+    @BindView(R.id.loginButton) Button login;
+    @BindView(R.id.swap) TextView signUp;
+    @BindView(R.id.forget) TextView resetPassword;
+    @BindView(R.id.login)RelativeLayout logged;
 
     private FirebaseAuth authorized;
 
@@ -49,6 +48,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         ButterKnife.bind(this);
+
+        logged=(RelativeLayout)findViewById(R.id.login);
+        signUp=(TextView)findViewById(R.id.swap);
+
+        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+        logged.startAnimation(logg);
+
+        Animation slide=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide);
+        signUp.startAnimation(slide);
 
         authorized = FirebaseAuth.getInstance();
         createAuthProgressDialog();
@@ -78,6 +86,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v == login) {
+
+
             loginWithPassword();
         }
 
