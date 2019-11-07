@@ -11,10 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".savedCouns"></activity>
         <activity
             android:name=".UserProfileActivity"
             android:parentActivityName=".UserProfileActivity" />
+=======
+        <activity android:name=".CommunityActivity"></activity>
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".Drawer"></activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:parentActivityName=".UserProfileActivity">
+
+        </activity>
+>>>>>>> cb7d18d3ea31fd5e65ef4d7e32fe4577b4d7241a
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,12 +38,18 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".MessageActivity" />
+<<<<<<< HEAD
         <activity android:name=".RegisterCounselorActivity" />
         <activity android:name=".LoginActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+=======
+        <activity android:name=".RegisterCounselorActivity"></activity>
+        <activity android:name=".LoginActivity"/>
+
+>>>>>>> cb7d18d3ea31fd5e65ef4d7e32fe4577b4d7241a
     </application>
 
 </manifest>

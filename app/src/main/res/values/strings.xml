@@ -1,4 +1,9 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name"></string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+=======
     <string name="app_name">WeConnect</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
@@ -20,4 +25,5 @@
         <item>Kenya</item>
         <item>Tanzania</item>
     </string-array>
+>>>>>>> 1891ed1e67fa0a2c9d4ec9179b6e19b587bc0d71
 </resources>
