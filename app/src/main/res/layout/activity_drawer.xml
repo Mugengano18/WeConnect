@@ -5,14 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Drawer">
+    tools:context=".Drawer"
+    android:id="@+id/drawer">
 
     <com.google.android.material.navigation.NavigationView
+        app:headerLayout="@layout/header"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/white"
         app:itemTextColor="@color/darkgrey"
-        app:itemIconTint="@color/darkgrey">
+        app:itemIconTint="@color/darkgrey"
+        app:menu="@menu/drawermenu"
+        android:layout_gravity="start">
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
