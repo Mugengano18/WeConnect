@@ -8,7 +8,7 @@
     <string name="create">No account yet?Sign up Here</string>
     <string-array name="country_arrays">
         <item>Choose Country</item>
-        <item>Bangladesh</item>
+        <item>Singapore</item>
         <item>United States</item>
         <item>Indonesia</item>
         <item>France</item>
@@ -17,5 +17,7 @@
         <item>New Zealand</item>
         <item>India</item>
         <item>Rwanda</item>
+        <item>Kenya</item>
+        <item>Tanzania</item>
     </string-array>
 </resources>

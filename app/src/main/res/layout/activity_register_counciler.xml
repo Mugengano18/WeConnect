@@ -5,29 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterCounselorActivity"
-    android:background="@color/colorLigthCoral"
+    android:background="@drawable/lolo"
     android:id="@+id/counselor">
 
+    <!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:id="@+id/profile"-->
+<!--        android:alpha="0.5"-->
+<!--        android:background="@drawable/border"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        />-->
+<!--    <Button-->
+<!--        android:id="@+id/choose"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_toRightOf="@id/profile"-->
+<!--        android:paddingLeft="3dp"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:text="Choose profile" />-->
+<!--    <Button-->
+<!--        android:id="@+id/upload"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:layout_below="@id/choose"-->
+<!--        android:layout_marginLeft="160dp"-->
+<!--        android:text="Upload" />-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/input_groupc"
-        android:layout_marginBottom="80dp"
-        android:orientation="vertical"
-        android:layout_alignParentLeft="true">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="sans-serif"
-            android:text="SIGN UP"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-    </LinearLayout>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif"
+        android:text="REGISTER"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:fontFamily="@font/amaranth" />
 
     <LinearLayout
         android:id="@+id/input_groupc"
@@ -36,7 +54,6 @@
         android:orientation="vertical"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
@@ -45,10 +62,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_top"
-            android:hint="Username"
+            android:hint="Full Name"
             android:inputType="textPersonName"
             android:maxLength="12"
-            android:padding="15dp" />
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
+
+        <EditText
+            android:id="@+id/occupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_top"
+            android:hint="occupation"
+            android:inputType="textPersonName"
+            android:maxLength="12"
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -57,16 +86,11 @@
             android:id="@+id/counEmail"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:padding="15dp" />
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_middle"
-            android:id="@+id/iRegistered"
-            android:hint="Reg.No"
-            android:inputType="text|number"
-            android:padding="15dp"/>
+
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,7 +98,8 @@
             android:hint="Password"
             android:id="@+id/counPasswordI"
             android:inputType="textPassword"
-            android:padding="15dp"/>
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -83,7 +108,17 @@
             android:id="@+id/iPassword1C"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:padding="15dp"/>
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
+
+        <Spinner
+            android:id="@+id/Country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bottom"
+            android:padding="15dp"
+            android:entries="@array/country_arrays"
+            app:fontFamily="@font/amaranth"/>
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -93,7 +128,8 @@
             android:layout_below="@+id/iPassword1"
             android:textColor="@color/colorRed"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            app:fontFamily="@font/amaranth"/>
 
 
         <Button
@@ -102,10 +138,10 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/button"
             android:text="SIGN UP"
-            android:textAllCaps="false"
             android:textColor="#FE5295"
             android:textSize="17sp"
-            android:id="@+id/signupButtonC"/>
+            android:id="@+id/counsellorsignup"
+            app:fontFamily="@font/amaranth"/>
 
         <TextView
             android:id="@+id/swapC"
@@ -118,7 +154,8 @@
             android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="#FAD0E1"
-            android:fontFamily="sans-serif"/>
+            android:fontFamily="sans-serif"
+            app:fontFamily="@font/amaranth"/>
 
     </LinearLayout>
 </RelativeLayout>

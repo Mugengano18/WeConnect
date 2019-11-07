@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +46,7 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
     private FirebaseAuth.AuthStateListener authorizedListener;
 
     private ProgressDialog mAuthProgressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +98,7 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
         }
 
         if (v == counsignUp) {
-            Intent intent1 = new Intent(LoginCounselorActivity.this, SignUpActivity.class);
+            Intent intent1 = new Intent(LoginCounselorActivity.this, RegisterCounselorActivity.class);
             startActivity(intent1);
             finish();
         }
@@ -129,7 +133,6 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
     }
 
     private void loginWithPassword() {
-
         String counPassword = counPasswordOl.getText().toString().trim();
         String counEmail = counEmailOl.getText().toString().trim();
 
@@ -162,6 +165,7 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
 
 
     }
+
 
 
 

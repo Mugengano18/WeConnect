@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@color/colorLigthPink"
+    android:background="@drawable/lolo"
     android:id="@+id/logCounsellor">
 
 
@@ -25,14 +25,9 @@
             android:fontFamily="sans-serif"
             android:text="SIGN IN"
             android:textColor="#000000"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="Lorem ipsum dolor sit amet."
-            android:textColor="#000000"
-            android:textSize="16sp"/>
+            android:textSize="30sp"
+            app:fontFamily="@font/amaranth"/>
+
 
     </LinearLayout>
 
@@ -56,7 +51,8 @@
             android:background="@drawable/edit_text_top"
             android:hint="E-mail"
             android:inputType="textPersonName"
-            android:padding="15dp" />
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
 
         <EditText
             android:id="@+id/iPasswordC"
@@ -65,7 +61,8 @@
             android:background="@drawable/edit_text_bottom"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="15dp" />
+            android:padding="15dp"
+            app:fontFamily="@font/amaranth"/>
 
 
         <Button
@@ -78,7 +75,8 @@
             android:text="SIGN IN"
             android:textAllCaps="false"
             android:textColor="#FE5295"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            app:fontFamily="@font/amaranth"/>
         <TextView
             android:id="@+id/forgetC"
             android:layout_width="wrap_content"

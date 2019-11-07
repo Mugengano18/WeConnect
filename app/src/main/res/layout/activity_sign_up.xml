@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity"
-    android:background="@color/colorLigthPink"
+    android:background="@drawable/lolo"
     android:id="@+id/sign">
 
 
@@ -77,6 +77,12 @@
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:padding="15dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bottom"
+            android:padding="15dp"
+            android:entries="@array/country_arrays"/>
 
         <CheckBox
             android:layout_width="wrap_content"

@@ -58,8 +58,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         signUp=(RelativeLayout)findViewById(R.id.sign);
 
-        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
-        signUp.startAnimation(logg);
+//        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+//        signUp.startAnimation(logg);
 
 
         authorized=FirebaseAuth.getInstance();
