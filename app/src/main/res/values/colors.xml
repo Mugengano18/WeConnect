@@ -17,9 +17,9 @@
     <color name="followingBg">#61F0DC</color>
     <color name="grey">#A1DA5E</color>
     <color name="circleBorder">#565A28</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryE">#008577</color>
+    <color name="colorPrimaryDarkE">#00574B</color>
+    <color name="colorAccenEt">#D81B60</color>
     <color name="colorDarkPrimary">#512DA8</color>
     <color name="colorRed">#FF0000</color>
     <color name="colorGreen">#00FF7F</color>
@@ -41,5 +41,15 @@
     <color name="colorPrimary2">#795548</color>
     <color name="colorPrimaryDark3">#5D4037</color>
     <color name="White">#ffffff</color>
-    <color name="darkgray">#6c6c6c</color>
+    <color name="darkgrayT">#6c6c6c</color>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#878787</color>
+    <color name="backgroundcolor">#fcfcfc</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorpurple">#855cad</color>
+    <color name="colorgreen">#219c5e</color>
+    <color name="colorblue">#379bed</color>
+    <color name="lightgray">#d8d7d9</color>
+    <color name="darkgray">#878787</color>
+    <color name="darkblue"></color>
 </resources>
