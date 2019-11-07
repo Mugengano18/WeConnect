@@ -16,7 +16,6 @@
       "oauth_client": [
         {
           "client_id": "240088890748-c94b4jjlhg0hom0dc74stnoo8oavvncd.apps.googleusercontent.com",
-<<<<<<< HEAD
           "client_type": 1,
           "android_info": {
             "package_name": "com.android1.weconnect",
@@ -25,8 +24,6 @@
         },
         {
           "client_id": "240088890748-6jak32qba7jn4024h19lsf3thvlsmnrg.apps.googleusercontent.com",
-=======
->>>>>>> cb7d18d3ea31fd5e65ef4d7e32fe4577b4d7241a
           "client_type": 1,
           "android_info": {
             "package_name": "com.android1.weconnect",

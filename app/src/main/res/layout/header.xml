@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="WeConect"
-        android:textColor="@color/white"
+        android:textColor="@color/White"
         android:textStyle="bold"
         android:layout_marginTop="5dp"/>
 
@@ -23,6 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="weconect@gamil.com"
-        android:textColor="@color/white"/>
+        android:textColor="@color/White"/>
 
 </LinearLayout>
