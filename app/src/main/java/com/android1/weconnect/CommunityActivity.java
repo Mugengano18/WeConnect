@@ -80,10 +80,8 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
     protected void onStart() {
         super.onStart();
         final FirebaseUser currentUser = auth.getCurrentUser();
-
         u.setUid(currentUser.getUid());
         u.setEmail(currentUser.getEmail());
-
         database.getReference("Users").child(currentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

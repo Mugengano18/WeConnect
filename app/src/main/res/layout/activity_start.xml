@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12sp">
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -38,7 +38,6 @@
                 android:scaleType="centerInside"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
                 android:layout_marginRight="128dp"
                 android:background="@drawable/counsellor"
                 android:text="Patient"
@@ -50,7 +49,6 @@
                 android:layout_below="@+id/patient"
                 android:layout_marginLeft="90dp"
                 android:layout_marginRight="60dp"
-                android:layout_marginTop="0dp"
                 android:padding="10dp"
                 android:text="User/Patient"
                 android:textSize="20sp" />

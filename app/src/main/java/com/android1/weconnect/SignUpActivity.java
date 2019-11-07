@@ -17,12 +17,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android1.weconnect.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth authorized;
     private FirebaseAuth.AuthStateListener authorizedThListener;
     private ProgressDialog authorizedProgressDialog;
+    DatabaseReference reference;
 
     private String fUserName;
 
@@ -52,20 +56,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-
         ButterKnife.bind(this);
-
-        signUp=(RelativeLayout)findViewById(R.id.sign);
 
 //        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
 //        signUp.startAnimation(logg);
 
 
         authorized=FirebaseAuth.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference().child("Users");
         createAuthStateListener();
         createAuthProgressDialog();
-
 
         loginOrg.setOnClickListener(this);
         signUpOrg.setOnClickListener(this);
@@ -124,6 +124,25 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
+
+                            FirebaseUser firebaseUser = authorized.getCurrentUser();
+                            User u = new User();
+                            u.setName(username);
+                            reference.child(firebaseUser.getUid()).setValue(u)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                Toast.makeText(getApplicationContext(),"Created new account successfully",Toast.LENGTH_SHORT).show();
+                                                finish();
+                                                Intent i = new Intent(SignUpActivity.this,CommunityActivity.class);
+                                                startActivity(i);
+                                            }
+                                            else {
+                                                Toast.makeText(getApplicationContext(),"could not create new account",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
 
                             createFirebaseUserProfile(task.getResult().getUser());
 

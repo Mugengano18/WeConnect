@@ -56,6 +56,7 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:id="@+id/community"
                     android:gravity="center"
                     app:cardElevation="10dp"
                     app:cardCornerRadius="12dp">
@@ -97,6 +98,7 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:id="@+id/counselors"
                     app:cardElevation="10dp"
                     app:cardCornerRadius="12dp">
                     <LinearLayout
@@ -142,6 +144,7 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:id="@+id/about"
                     app:cardElevation="10dp"
                     app:cardCornerRadius="12dp">
                     <LinearLayout
