@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CommunityActivity"></activity>
+        <activity android:name=".MessageActivity" />
         <activity android:name=".Drawer"></activity>
         <activity
             android:name=".UserProfileActivity"
@@ -31,7 +33,6 @@
         <activity android:name=".MessageActivity" />
         <activity android:name=".RegisterCounselorActivity"></activity>
         <activity android:name=".LoginActivity"/>
-
 
     </application>
 
