@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FFC107</color>
-    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorPrimaryDark">#878787</color>
     <color name="backgroundcolor">#fcfcfc</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorpurple">#855cad</color>
@@ -9,4 +9,5 @@
     <color name="colorblue">#379bed</color>
     <color name="lightgray">#d8d7d9</color>
     <color name="darkgray">#878787</color>
+    <color name="darkblue"></color>
 </resources>
