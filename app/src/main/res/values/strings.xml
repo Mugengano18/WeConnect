@@ -1,3 +1,27 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name"></string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+=======
     <string name="app_name">WeConnect</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title">Fighter</string>
+    <string name="conditions">I accept,the terms and conditions</string>
+    <string name="login">Login Here!!</string>
+    <string name="create">No account yet?Sign up Here</string>
+    <string-array name="country_arrays">
+        <item>Choose Country</item>
+        <item>Bangladesh</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+        <item>Rwanda</item>
+    </string-array>
+>>>>>>> 1891ed1e67fa0a2c9d4ec9179b6e19b587bc0d71
 </resources>
