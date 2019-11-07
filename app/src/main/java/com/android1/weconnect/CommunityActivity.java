@@ -65,15 +65,16 @@ public class CommunityActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if(TextUtils.isEmpty(etMessage.getText().toString())){
-            Message message = new Message(etMessage.getText().toString(),u.getName());
-            etMessage.setText("");
-            messagedb.push().setValue(message);
+        if (v==imgButton){
+            if(TextUtils.isEmpty(etMessage.getText().toString())){
+                Message message = new Message(etMessage.getText().toString(),u.getName());
+                etMessage.setText("");
+                messagedb.push().setValue(message);
+            }
+            else {
+                Toast.makeText(getApplicationContext(),"you cannot send blank message",Toast.LENGTH_SHORT).show();
+            }
         }
-        else {
-            Toast.makeText(getApplicationContext(),"you cannot send blank message",Toast.LENGTH_SHORT).show();
-        }
-
     }
 
 

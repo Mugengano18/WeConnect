@@ -56,7 +56,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 //        eliane
         reference = FirebaseDatabase.getInstance().getReference().child("Users");
 //        eliane
-//        createAuthStateListener();
+        createAuthStateListener();
         createAuthProgressDialog();
 
 
@@ -137,33 +137,33 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
 
 //                            eliane
-//                            createFirebaseUserProfile(task.getResult().getUser());
+                            createFirebaseUserProfile(task.getResult().getUser());
 
                         }
-//                        else {
-//                            Toast.makeText(SignUp.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                        }
+                        else {
+                            Toast.makeText(SignUp.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                 });
     }
-//    private void createAuthStateListener() {
-//        authorizedThListener = new FirebaseAuth.AuthStateListener() {
-//
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-//                final FirebaseUser user = firebaseAuth.getCurrentUser();
-//                if (user != null) {
-//                    Intent intent = new Intent(SignUp.this, LoginActivity.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            }
-//
-//        };
-//    }
+    private void createAuthStateListener() {
+        authorizedThListener = new FirebaseAuth.AuthStateListener() {
+
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(SignUp.this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+        };
+    }
 
     private boolean isValidEmail(String email) {
         boolean isGoodEmail =
@@ -194,22 +194,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         return true;
     }
 
-//    private void createFirebaseUserProfile(final FirebaseUser user) {
-//
-//        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder().setDisplayName(fUserName).build();
-//
-//        user.updateProfile(addProfileName).addOnCompleteListener(new OnCompleteListener<Void>() {
-//
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        if (task.isSuccessful()) {
-//                            Toast.makeText(SignUp.this, "The displayed username has been set", Toast.LENGTH_LONG).show();
-//
-//                        }
-//                    }
-//
-//                });
-//    }
+    private void createFirebaseUserProfile(final FirebaseUser user) {
+
+        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder().setDisplayName(fUserName).build();
+
+        user.updateProfile(addProfileName).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUp.this, "The displayed username has been set", Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+
+                });
+    }
     @Override
     public void onStart() {
         super.onStart();

@@ -26,16 +26,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public static final String TAG = LoginActivity.class.getSimpleName();
 
-    @BindView(R.id.iPasswordL)
-    EditText passwordOl;
-    @BindView(R.id.iEmailL)
-    EditText emailOl;
-    @BindView(R.id.loginButton)
-    Button login;
-    @BindView(R.id.swap)
-    TextView signUp;
-    @BindView(R.id.forget)
-    TextView resetPassword;
+    @BindView(R.id.iPasswordL) EditText passwordOl;
+    @BindView(R.id.iEmailL) EditText emailOl;
+    @BindView(R.id.loginButton) Button login;
+    @BindView(R.id.swap) TextView signUp;
+    @BindView(R.id.forget) TextView resetPassword;
 
     private FirebaseAuth authorized;
 
@@ -49,6 +44,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         ButterKnife.bind(this);
+
+        Intent i = getIntent();
 
         authorized = FirebaseAuth.getInstance();
         createAuthProgressDialog();
