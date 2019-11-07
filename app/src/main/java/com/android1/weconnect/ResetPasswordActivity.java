@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,10 +24,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     public static final String TAG = ResetPasswordActivity.class.getSimpleName();
 
-    @BindView(R.id.gotoEmailButton)
-    Button verifying;
-    @BindView(R.id.iUserEmail)
-    EditText userEmail;
+    @BindView(R.id.gotoEmailButton) Button verifying;
+    @BindView(R.id.iEmailP) EditText userEmail;
+    @BindView(R.id.reset) RelativeLayout resetting;
 
     private FirebaseAuth authorized;
 
@@ -35,6 +37,11 @@ public class ResetPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reset_password);
 
         ButterKnife.bind(this);
+        resetting=(RelativeLayout)findViewById(R.id.reset);
+
+        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+        resetting.startAnimation(logg);
+
 
 
         verifying.setOnClickListener(new View.OnClickListener() {

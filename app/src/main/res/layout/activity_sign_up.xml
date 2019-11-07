@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity"
-    android:background="@color/colorLigthPink">
+    android:background="@color/colorLigthPink"
+    android:id="@+id/sign">
 
 
     <LinearLayout

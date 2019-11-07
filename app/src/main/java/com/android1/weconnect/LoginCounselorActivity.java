@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,16 +25,18 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.android1.weconnect.R.layout.activity_login_counciler;
+
 public class LoginCounselorActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String TAG = LoginActivity.class.getSimpleName();
 
-    @BindView(R.id.counUserNameL) EditText counUsernameOl;
-    @BindView(R.id.counPasswordL) EditText counPasswordOl;
-    @BindView(R.id.counEmailL) EditText counEmailOl;
-    @BindView(R.id.counLoginButton) Button counLogin;
-    @BindView(R.id.counSwap) TextView counsignUp;
-    @BindView(R.id.counforget) TextView counresetPassword;
+    @BindView(R.id.iPasswordC) EditText counPasswordOl;
+    @BindView(R.id.iEmailC) EditText counEmailOl;
+    @BindView(R.id.loginButtonC) Button counLogin;
+    @BindView(R.id.swapC) TextView counsignUp;
+    @BindView(R.id.forgetC) TextView counresetPassword;
+    @BindView(R.id.logCounsellor)RelativeLayout loggin;
 
     private FirebaseAuth authorized;
 
@@ -42,9 +47,17 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(activity_login_counciler);
 
         ButterKnife.bind(this);
+
+
+        loggin=(RelativeLayout)findViewById(R.id.logCounsellor);
+
+
+        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+        loggin.startAnimation(logg);
+
 
         authorized = FirebaseAuth.getInstance();
         createAuthProgressDialog();
@@ -116,14 +129,11 @@ public class LoginCounselorActivity extends AppCompatActivity implements View.On
     }
 
     private void loginWithPassword() {
-        String counUsername = counUsernameOl.getText().toString().trim();
+
         String counPassword = counPasswordOl.getText().toString().trim();
         String counEmail = counEmailOl.getText().toString().trim();
 
-        if (counUsername.equals("")) {
-            counUsernameOl.setError("Please enter your username");
-            return;
-        }
+
         if (counPassword.equals("")) {
             counPasswordOl.setError("Password cannot be blank");
             return;

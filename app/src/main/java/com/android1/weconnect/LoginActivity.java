@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = LoginActivity.class.getSimpleName();
 
-    @BindView(R.id.iUserNameL) EditText usernameOl;
+
     @BindView(R.id.iPasswordL) EditText passwordOl;
     @BindView(R.id.iEmailL) EditText emailOl;
     @BindView(R.id.loginButton) Button login;
@@ -127,14 +127,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void loginWithPassword() {
-        String username = usernameOl.getText().toString().trim();
+
         String password = passwordOl.getText().toString().trim();
         String email = emailOl.getText().toString().trim();
 
-        if (username.equals("")) {
-            usernameOl.setError("Please enter your username");
-            return;
-        }
+
         if (password.equals("")) {
             passwordOl.setError("Password cannot be blank");
             return;

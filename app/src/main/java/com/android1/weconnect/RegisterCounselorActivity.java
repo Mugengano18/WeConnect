@@ -12,6 +12,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,6 +37,7 @@ public class RegisterCounselorActivity extends AppCompatActivity implements View
     @BindView(R.id.iPassword1C)EditText comfirmPasswordCon;
     @BindView(R.id.signupButtonC)EditText submission;
     @BindView(R.id.checkC) CheckBox verifyCon;
+    @BindView(R.id.counselor)RelativeLayout login;
 
     private FirebaseAuth authorized;
     private FirebaseAuth.AuthStateListener authorizedThListener;
@@ -47,10 +50,17 @@ public class RegisterCounselorActivity extends AppCompatActivity implements View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_register_counciler);
 
 
         ButterKnife.bind(this);
+
+
+        login=(RelativeLayout)findViewById(R.id.counselor);
+
+
+        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+        login.startAnimation(logg);
 
         authorized=FirebaseAuth.getInstance();
         createAuthStateListener();

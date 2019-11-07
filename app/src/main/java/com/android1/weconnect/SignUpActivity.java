@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,17 +31,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     public static final String TAG=SignUpActivity.class.getSimpleName();
 
-    @BindView(R.id.iUserName)
-    EditText usernameOrg;
+    @BindView(R.id.iUserName) EditText usernameOrg;
     @BindView(R.id.iPassword)EditText passwordOrg;
     @BindView(R.id.iPassword1)EditText comfirmPasswordOrg;
     @BindView(R.id.iEmail)EditText emailOrg;
-    @BindView(R.id.signupButton)
-    Button signUpOrg;
-    @BindView(R.id.swapL)
-    TextView loginOrg;
-    @BindView(R.id.check)
-    CheckBox verify;
+    @BindView(R.id.signupButton) Button signUpOrg;
+    @BindView(R.id.swapL) TextView loginOrg;
+    @BindView(R.id.check) CheckBox verify;
+    @BindView(R.id.sign)RelativeLayout signUp;
 
     private FirebaseAuth authorized;
     private FirebaseAuth.AuthStateListener authorizedThListener;
@@ -57,6 +55,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
         ButterKnife.bind(this);
+
+        signUp=(RelativeLayout)findViewById(R.id.sign);
+
+        Animation logg= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce);
+        signUp.startAnimation(logg);
+
 
         authorized=FirebaseAuth.getInstance();
         createAuthStateListener();
