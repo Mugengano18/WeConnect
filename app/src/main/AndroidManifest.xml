@@ -12,11 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AboutusActivity"></activity>
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".SignUp" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".DrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
