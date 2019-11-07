@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#E7D05F</color>
-    <color name="colorPrimaryDark">#E0EE5D</color>
-    <color name="colorAccent">#D6BF04</color>
+    <color name="colorPrimaryD">#E7D05F</color>
+    <color name="colorPrimaryDarkD">#E0EE5D</color>
+    <color name="colorAccentD">#D6BF04</color>
     <color name="address">#4E4B24</color>
     <color name="colorPrimaryA">#795548</color>
     <color name="colorPrimaryDarkA">#5D4037</color>
@@ -19,4 +19,28 @@
     <color name="followingBg">#61F0DC</color>
     <color name="grey">#A1DA5E</color>
     <color name="circleBorder">#565A28</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreen">#00FF7F</color>
+    <color name="colorYellow">#9ACD32</color>
+    <color name="colorMidnightBlue">#191970</color>
+    <color name="colorLightSlateGray">#778899</color>
+    <color name="colorChocolate">#D2691E</color>
+    <color name="colorPrimaryText">#1F1E1E</color>
+    <color name="colorSecondaryText">#727272</color>
+    <color name="colorDivider">#B6B6B6</color>
+    <color name="colorTextIcons">#FFFF</color>
+    <color name="colorFuchsia">#FF00FF</color>
+    <color name="colorHotPink">#FF69B4</color>
+    <color name="colorLigthCoral">#F08080</color>
+    <color name="colorLigthPink">#FFB6C1</color>
+    <color name="colorPrimary1">#D81B60</color>
+    <color name="colorPrimaryDark2">#FE5295</color>
+    <color name="colorAccent3">#D81B60</color>
+    <color name="colorPrimary2">#795548</color>
+    <color name="colorPrimaryDark3">#5D4037</color>
+    <color name="White">#ffffff</color>
+    <color name="darkgray">#6c6c6c</color>
 </resources>
