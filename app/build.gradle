@@ -55,13 +55,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-<<<<<<< HEAD
+
     implementation 'com.google.android.material:material:1.0.0'
-=======
     // Butterknife
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    //firebase
->>>>>>> 1891ed1e67fa0a2c9d4ec9179b6e19b587bc0d71
+
 
 }
