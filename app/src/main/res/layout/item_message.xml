@@ -16,24 +16,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@color/colorDarkPrimary"
+                android:layout_height="50dp"
+                android:background="#ffff"
                 android:orientation="horizontal"
                 android:id="@+id/l1Message">
 
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:textColor="#ffff"
-                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:padding="3dp"
                     android:text="Example of Text"
-                    android:id="@+id/tvTitle"
-                    android:padding="5dp"
-                    android:layout_weight="1"/>
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
                 <ImageButton
                     android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@color/colorDarkPrimary"
+                    android:layout_height="47dp"
+                    android:background="#ffffff"
                     android:src="@drawable/ic_action_delete"
                     android:id="@+id/ibDelete"/>
 

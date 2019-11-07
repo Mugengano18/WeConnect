@@ -42,13 +42,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageA
     public void onBindViewHolder(@NonNull MessageAdapterViewHolder holder, int position) {
         Message message = messages.get(position);
         if (message.getName().equals(AllMethods.name)){
-            holder.tvTitle.setText("You: " + message.getMessage());
+            holder.tvTitle.setText("You: "+"\n" + message.getMessage());
             holder.tvTitle.setGravity(Gravity.START);
-            holder.l1.setBackgroundColor(Color.parseColor("#EF9E73"));
+            holder.l1.setBackgroundColor(Color.parseColor("#e0f2f1"));
         }
         else {
-            holder.tvTitle.setText(message.getName()+": "+message.getMessage());
+            holder.tvTitle.setText(message.getName()+": \n"+message.getMessage());
             holder.ibDelete.setVisibility(View.GONE);
+
         }
     }
 
