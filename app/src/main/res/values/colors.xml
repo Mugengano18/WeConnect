@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimaryD">#E7D05F</color>
+    <color name="colorPrimaryDarkD">#E0EE5D</color>
+    <color name="colorAccentD">#D6BF04</color>
+    <color name="address">#4E4B24</color>
+    <color name="followers">#AAA062</color>
+    <color name="headings">#376662</color>
+    <color name="solidCircle">#F1E685</color>
+    <color name="circle">#61CCBD</color>
+    <color name="gradEnd">#55E0D4</color>
+    <color name="gradStart">#A0EB7A</color>
+    <color name="followersBg">#008577</color>
+    <color name="followingBg">#61F0DC</color>
+    <color name="grey">#A1DA5E</color>
+    <color name="circleBorder">#565A28</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
@@ -24,5 +38,4 @@
     <color name="colorPrimaryDark3">#5D4037</color>
     <color name="White">#ffffff</color>
     <color name="darkgray">#6c6c6c</color>
-
 </resources>
