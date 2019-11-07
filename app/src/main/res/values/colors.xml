@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#E0EE5D</color>
     <color name="colorAccent">#D6BF04</color>
     <color name="address">#4E4B24</color>
+    <color name="colorPrimaryA">#795548</color>
+    <color name="colorPrimaryDarkA">#5D4037</color>
+    <color name="colorAccentA">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="darkgrey">#6c6c6c</color>
     <color name="followers">#AAA062</color>
     <color name="headings">#376662</color>
     <color name="solidCircle">#F1E685</color>
