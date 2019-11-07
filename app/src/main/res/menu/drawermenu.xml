@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu1"
+        android:title="dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"/>
+    <item android:id="@+id/menu2"
+        android:title="search"
+        android:icon="@drawable/ic_search_black_24dp"/>
+    <item android:id="@+id/menu3"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings_black_24dp"/>
+    <item android:id="@+id/menu4"
+        android:title="Logout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+</menu>

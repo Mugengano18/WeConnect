@@ -23,14 +23,6 @@
           }
         },
         {
-          "client_id": "240088890748-la488b9kilc4sipv0vjjgd87dq16bjva.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.android1.weconnect",
-            "certificate_hash": "225a42c9e294a8d9ee9b7a5971cd4c379b02ce0f"
-          }
-        },
-        {
           "client_id": "240088890748-k1t3guou41d5hvsgpdu565p1gp2ajknq.apps.googleusercontent.com",
           "client_type": 3
         }
